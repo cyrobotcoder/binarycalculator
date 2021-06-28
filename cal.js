@@ -1,27 +1,74 @@
-function onButton(e) {
-    var btn = e.target || e.srcElement;
-    var action = document.getElementById(btn.id).innerHTML;
-    var res = document.getElementById('res');
+var q=0;
+let screen=document.getElementById("res");
+function fun1()
+{
     
-    switch(action) {
-        case 'C':
-            res.innerHTML = '';
-            break;
-        case '=':
-            var expr = res.innerHTML;
-            var nums = /(\d+)/g;
-            expr = expr.replace(nums, function(match) {
-                return parseInt(match, 2);
-            })
+    screen.innerHTML+="0";
+}
+function fun2()
+{
+    
+    screen.innerHTML+="1";
+}
+function fun3()
+{
+    screen.innerHTML="";
+    
+}
+function fun4()
+{  
 
-            res.innerHTML = eval(expr).toString(2);
-            break;
-        default:
-            res.innerHTML += action;
-            break;
+  if(m=='+')
+      {
+        var k =(screen.innerHTML).indexOf("+");
+        var operation=parseInt((screen.innerHTML).substr(k+1),2);
+        var a =q+operation;
+      }
+    else if(m=='-')
+    
+    {
+        var i =(screen.innerHTML).indexOf("-");
+        var operation=parseInt((screen.innerHTML).substr(i+1),2);
+        var a =q-operation;
     }
+     
+      else if(m=='*')
+    
+    {
+        var i =(screen.innerHTML).indexOf("*");
+        var operation=parseInt((screen.innerHTML).substr(i+1),2);
+        var a =q*operation;
+    }
+      else if(m=='/')
+    
+    {
+        var i =(screen.innerHTML).indexOf("/");
+        var operand2=parseInt((screen.innerHTML).substr(i+1),2);
+        var a =q/operand2;
+    }
+     screen.innerHTML=a.toString(2);
 }
-var buttons = document.getElementsByTagName('button');
-for (let button of buttons) {
-    button.onclick = onButton;
+
+function fun5()
+{
+    m="+";
+    q=parseInt(screen.innerHTML,2);
+    screen.innerHTML=screen.innerHTML+"+";
 }
+function fun6()
+{
+    m="-";
+    screen.innerHTML=screen.innerHTML+"-";
+}
+function fun7()
+{
+    m="*";
+    q=parseInt(screen.innerHTML,2);
+    screen.innerHTML=screen.innerHTML+"*";
+}
+function fun8()
+{
+    m="/";
+    screen.innerHTML=screen.innerHTML+"/";
+}
+
