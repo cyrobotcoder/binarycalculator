@@ -1,23 +1,17 @@
 var q=0;
 let screen=document.getElementById("res");
-function fun1()
-{
-    
+function fun1(){
     screen.innerHTML+="0";
 }
-function fun2()
-{
+function fun2(){
     
     screen.innerHTML+="1";
 }
-function fun3()
-{
+function fun3(){
     screen.innerHTML="";
     
 }
-function fun4()
-{  
-
+function fun4(){  
   if(m=='+')
       {
         var k =(screen.innerHTML).indexOf("+");
@@ -49,26 +43,21 @@ function fun4()
      screen.innerHTML=a.toString(2);
 }
 
-function fun5()
-{
+function fun5(){
     m="+";
     q=parseInt(screen.innerHTML,2);
     screen.innerHTML=screen.innerHTML+"+";
 }
-function fun6()
-{
+function fun6(){
     m="-";
     screen.innerHTML=screen.innerHTML+"-";
 }
-function fun7()
-{
+function fun7(){
     m="*";
     q=parseInt(screen.innerHTML,2);
     screen.innerHTML=screen.innerHTML+"*";
 }
-function fun8()
-{
+function fun8(){
     m="/";
     screen.innerHTML=screen.innerHTML+"/";
 }
-
